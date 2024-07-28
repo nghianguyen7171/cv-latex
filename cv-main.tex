@@ -1,0 +1,105 @@
+%%%%%%%%%%%%%%%
+% This CV example/template is based on my own
+% CV which I (lamely attempted) to clean up, so that
+% it's less of an eyesore and easier for others to use.
+%
+% LianTze Lim (liantze@gmail.com)
+% 16 September, 2016
+%
+\documentclass[a4paper,skipsamekey,12pt]{curve}
+
+% Uncomment to enable Chinese; needs XeLaTeX
+% \usepackage{ctex}
+
+\usepackage{settings}
+\usepackage{ragged2e}
+\usepackage{biblatex}
+\usepackage{academicons}
+\usepackage{xcolor}
+
+\renewcommand*{\mkbibnamegiven}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}}
+
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}}
+
+\newcommand{\orcid}[1]{\href{https://orcid.org/#1}{\includegraphics[width=10pt]{ORCID_iD.png}}}
+
+
+\usepackage[T1,T5]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{csquotes}
+
+%% Only needed if you want a Publication List
+\addbibresource{own-bib.bib}
+
+%% Specify your last name and first name (as given in the .bib) to automatically bold your own name in the publications list. One caveat: You need to write \bibnamedelima where there's a space in your name for this to work properly for now...
+\myname{Trong Nghia}{Nguyen}
+
+% Change the page margins if you want
+% \geometry{left=1cm,right=1cm,top=1.5cm,bottom=1.5cm}
+
+% Change the colours if you want
+% \definecolor{SwishLineColour}{HTML}{00FFFF}
+% \definecolor{MarkerColour}{HTML}{0000CC}
+
+% Change the item prefix marker if you want
+% \prefixmarker{$\diamond$}
+
+%% Photo is only shown if "fullonly" is included
+\includecomment{fullonly}
+% \excludecomment{fullonly}
+
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% {\LARGE\sffamily Nguyễn \bfseries Hồng Hải}
+\leftheader{%
+  {\LARGE\sffamily Nguyen \bfseries Trong-Nghia} \orcid{0000-0003-1888-0117}
+  
+  \makefield{\faEnvelopeO}{\texttt{trongnghia7171@gmail.com}}
+  ~~~~~~~~~\makefield{\faSkype}{\texttt{live:trongnghia7171}}
+  
+  
+  \makefield{\faGithub}{\url{https://github.com/nghianguyen7171}}
+  
+
+ 
+}
+
+\rightheader{~}
+\begin{fullonly}
+\photo[r]{ntn}
+\photoscale{0.16}
+\end{fullonly}
+\usepackage{fancyhdr}
+\usepackage{pdfpages}
+\usepackage{datetime2}
+
+\title{Curriculum Vitae}
+
+\begin{document}
+\justify
+
+\makeheaders[c]
+
+\makerubric{personal}
+
+\makerubric{education}
+\makerubric{work-company}
+\makerubric{research}
+\input{publications}
+\makerubric{award}
+% \makerubric{project}
+
+\makerubric{misc}
+
+%\makerubric{referee}
+% \input{referee-full}
+
+\end{document}
